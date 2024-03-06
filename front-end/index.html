@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="front-end/styles.css">
+</head>
+<body>
+
+<div class="login-container">
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <input type="submit" value="Sign In">
+    </form>
+</div>
+
+<script>
+document.getElementById('loginForm').onsubmit = function(e) {
+    e.preventDefault();
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    if(username == 'user' && password == 'password') {
+        alert('Login successful');
+        // Redirect to another page or perform some action
+    } else {
+        alert('Login failed');
+    }
+};
+</script>
+
+</body>
+</html>
