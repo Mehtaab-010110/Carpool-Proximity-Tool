@@ -1,4 +1,3 @@
-/* style.css */
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
@@ -18,11 +17,20 @@ body {
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
-input[type="text"], input[type="password"] {
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="submit"] {
+    width: calc(100% - 30px); /* Subtracting padding and border */
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; /* Spacing between inputs */
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
@@ -30,22 +38,18 @@ input[type="text"], input[type="password"] {
 
 input[type="submit"] {
     font-weight: bold;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
     color: #ffffff;
     background-color: #007bff;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 30px; /* More space above the submit button */
 }
 
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
-label {
-    margin-bottom: 5px;
-    font-weight: bold;
+/* Ensure that the first label/input pair is not too close to the top of the container */
+label:first-of-type, input[type="text"]:first-of-type {
+    margin-top: 0;
 }
-
-/* Add additional styling as needed */
