@@ -25,7 +25,7 @@ document.getElementById('loginForm').onsubmit = function(e) {
     var password = document.getElementById('password').value;
     if(username === 'user' && password === 'password') {
         alert('Login successful');
-        // Redirect to another page or perform some action
+        window.location.href = 'home_page.html'; // Redirect to main page
     } else {
         alert('Login failed');
     }
