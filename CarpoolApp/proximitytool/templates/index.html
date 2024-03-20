@@ -1,0 +1,35 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Carpool Proximity Homepage</h1>
+    <p> Welcome user to this index page. You can see your carpool group below: </p>
+    {% if carpool_group %}
+        <table>
+            <tr>
+                <th colspan="3">{{ carpool_group.name }}</th>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Company</th>
+            </tr>
+            {% for member in carpool_group.members.all %}
+                <tr
+                    {% if member == carpool_group.driver %}
+                        class="text-success"
+                    {% endif %}
+                        >
+                    <td>{{ member.id }}</td>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.company.name }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+    {% else %}
+        <p>You are not part of any carpool group.</p>
+    {% endif %}
+
+
+            
+{% endblock %}
