@@ -21,3 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+// This is where you'd add the JavaScript to handle data loading and table population
+
+document.addEventListener('DOMContentLoaded', function () {
+    var dataTable = document.getElementById('data-table');
+
+    // This is a dummy row, in practice, you'd load CSV data and create rows
+    var dummyRow = `<tr>
+                        <td>Example Company</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>25</td>
+                    </tr>`;
+    dataTable.innerHTML += dummyRow;
+});
