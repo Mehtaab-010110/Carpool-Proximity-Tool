@@ -30,6 +30,17 @@
         <!-- Footer content if needed -->
     </footer>
 
-    <script src="data_page.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the logout button by its ID
+            var logoutButton = document.getElementById('logoutButton');
+        
+            // Add a click event listener to the logout button
+            logoutButton.addEventListener('click', function() {
+                // Redirect to the login page
+                window.location.href = 'index.html';
+            });
+        });
+        </script>
 </body>
 </html>
