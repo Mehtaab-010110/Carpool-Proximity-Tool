@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPAL - Employee Proximity Assisted Locator</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="logo">EPAL</div>
+        <form id="logout-form" method="post" action="{% url 'admin:logout' %}?next=/">
+            {% csrf_token %}
+            <button type="submit" id="logoutButton">LOGOUT</button>
+        </form>
+    </header>
+    <main>
+        <section class="intro">
+            <h1>Employee Proximity Assisted Locator</h1>
+            <p>Analyze your data and generate insightful reports</p>
+            <p class="emphasis">WITH JUST ONE CLICK</p>
+            <hr>
+        </section>
+        <section class="action-buttons">
+            <button id="uploadButton">UPLOAD EMPLOYEE DATA</button>
+            <div class="template-download">
+                <p>DON’T HAVE A CSV ?</p>
+                <p>Download our template and add your employee data into it.</p>
+                <button id="downloadButton">DOWNLOAD TEMPLATE</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content if needed -->
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the logout button by its ID
+        var logoutButton = document.getElementById('logoutButton');
+    
+        // Add a click event listener to the logout button
+        logoutButton.addEventListener('click', function() {
+            // Redirect to the login page
+            window.location.href = 'index.html';
+        });
+    });
+    </script>
+    
+</body>
+</html>
