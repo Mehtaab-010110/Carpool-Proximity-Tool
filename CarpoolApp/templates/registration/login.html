@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    
+    <div class="login-message">
+        {% if forms.errors %}
+            <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+            {% if user.is_authenticated %}
+                <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+            {% else %}
+                <p>Please login to see this page</p>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <div class="login-container">
+        <form id="loginForm" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>{{ form.username.label_tag }}</td>
+                    <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                    <td>{{ form.password.label_tag }}</td>
+                    <td>{{ form.password }}</td>
+                </tr>
+            </table>
+            <input type="submit" value="Sign In">
+            <input type="hidden" name="next" value="{{ next }}">
+        </form>
+    </div>
+
+<script>
+/*document.getElementById('loginForm').onsubmit = function(e) {
+    e.preventDefault();
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    if(username === 'user' && password === 'password') {
+        alert('Login successful');
+        window.location.href = 'home_page.html'; // Redirect to main page
+    } else {
+        alert('Login failed');
+    }
+};*/
+</script>
+
+</body>
+</html>
