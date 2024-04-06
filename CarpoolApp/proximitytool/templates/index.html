@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">EPAL</div>
-        <form id="logout-form" method="post" action="{% url 'admin:logout' %}?next=/">
+        <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
             {% csrf_token %}
             <button type="submit" id="logoutButton">LOGOUT</button>
         </form>
