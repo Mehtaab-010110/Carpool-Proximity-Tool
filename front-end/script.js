@@ -6,21 +6,32 @@ document.addEventListener('DOMContentLoaded', function () {
     if(logoutButton) {
         logoutButton.addEventListener('click', function () {
             alert('Logout clicked');
-            // Here you might want to redirect to the login page or perform a logout action
         });
     }
 
     if(uploadButton) {
         uploadButton.addEventListener('click', function () {
             alert('Upload Employee Data clicked');
-            // Implement actual upload functionality
         });
     }
 
     if(downloadButton) {
         downloadButton.addEventListener('click', function () {
             alert('Download Template clicked');
-            // Implement the download functionality
         });
     }
+});
+// This is where you'd add the JavaScript to handle data loading and table population
+
+document.addEventListener('DOMContentLoaded', function () {
+    var dataTable = document.getElementById('data-table');
+
+    // This is a dummy row, in practice, you'd load CSV data and create rows
+    var dummyRow = `<tr>
+                        <td>Example Company</td>
+                        <td>100</td>
+                        <td>50</td>
+                        <td>25</td>
+                    </tr>`;
+    dataTable.innerHTML += dummyRow;
 });

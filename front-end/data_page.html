@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Page</title>
+    <link rel="stylesheet" href="data_page.css">
+</head>
+<body>
+    <header>
+        <div class="logo">EPAL</div>
+        <button id="logoutButton">LOGOUT</button>
+    </header>
+    <main>
+        <section class="content-container">
+            <h1>Data Report</h1>
+            <table id="data-table">
+                <!-- Table headers -->
+                <tr>
+                    <th>Company Name</th>
+                    <th>Employee Count</th>
+                    <th>500m Matches</th>
+                    <th>1000m Matches</th>
+                </tr>
+                <!-- Data will be inserted here using JavaScript -->
+            </table>
+        </section>
+    </main>
+    <footer>
+        <!-- Footer content if needed -->
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the logout button by its ID
+            var logoutButton = document.getElementById('logoutButton');
+        
+            // Add a click event listener to the logout button
+            logoutButton.addEventListener('click', function() {
+                // Redirect to the login page
+                window.location.href = 'index.html';
+            });
+        });
+        </script>
+</body>
+</html>
