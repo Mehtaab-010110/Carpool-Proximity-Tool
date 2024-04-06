@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 
 class Person(models.Model):
@@ -11,6 +12,9 @@ class Person(models.Model):
     is_driver = models.BooleanField(default=False)
     address = models.ForeignKey("Address", on_delete=models.RESTRICT, null=True)
     company = models.ForeignKey("Company", on_delete=models.RESTRICT, null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, 
+                                on_delete=models.SET_NULL, null=True,
+                                blank=True)
 
 
     # Methods
