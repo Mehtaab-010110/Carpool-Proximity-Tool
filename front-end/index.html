@@ -18,19 +18,7 @@
     </form>
 </div>
 
-<script>
-document.getElementById('loginForm').onsubmit = function(e) {
-    e.preventDefault();
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    if(username === 'user' && password === 'password') {
-        alert('Login successful');
-        window.location.href = 'home_page.html'; // Redirect to main page
-    } else {
-        alert('Login failed');
-    }
-};
-</script>
+<script src="login.js"></script>
 
 </body>
 </html>
