@@ -184,3 +184,120 @@ hr {
 
 
 
+/* General Animation on Login Container for Fade and Scale */
+@keyframes fadeInScaleUp {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.login-container {
+    animation: fadeInScaleUp 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+    opacity: 0; /* Start from invisible for the animation */
+}
+
+/* Dynamic Shadow and Movement for Hover on Form Elements */
+input[type="text"], input[type="password"], input[type="submit"] {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+input[type="text"]:hover, input[type="password"]:hover, input[type="submit"]:hover {
+    box-shadow: 0 5px 15px rgba(0, 105, 217, 0.4);
+    transform: translateY(-2px); /* Lift elements slightly on hover */
+}
+
+input[type="submit"] {
+    overflow: hidden; /* Ensures that background changes are contained within the button borders */
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+input[type="submit"]:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: left 0.4s ease;
+    border-radius: 8px; /* Match the border radius of the button */
+}
+
+input[type="submit"]:hover:before {
+    left: 100%;
+}
+
+/* Subtle pulsing effect on the button to draw attention */
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+    }
+}
+
+input[type="submit"]:focus:not(:active) {
+    animation: pulse 2s infinite;
+}
+
+/* Styling for Application Title and Tagline */
+.app-title h1 {
+    text-align: center;
+    color: #007aff;
+    font-size: 2.4rem;
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.app-title p.tagline {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    animation: slideInFromRight 1s ease-out forwards;
+    margin-bottom: 20px;
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* Styles for the application title and tagline */
+.app-title {
+    margin-bottom: 4rem; /* Adds space below the title and tagline */
+    text-align: center; /* Centers the title and tagline text */
+}
+
+/* Styles for form elements to add more space */
+form {
+    margin-top: 2rem; /* Adds space between the tagline and the form fields */
+}
+
+/* Additional margin for input fields */
+input[type="text"],
+input[type="password"] {
+    margin-bottom: 2rem; /* Increases space between input fields */
+}

@@ -7,9 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
     fileInput.style.display = 'none'; // Hide the file input element
     document.body.appendChild(fileInput); // Append to the DOM
 
-    logoutButton?.addEventListener('click', function() {
-        alert('Logout clicked');
-        window.location.href = 'index.html'; // Redirect to the login page
+    logoutButton?.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default action
+        // Display confirmation dialog
+        if (confirm('Are you sure you want to logout?')) {
+            window.location.href = 'index.html'; // Redirect to the login page if user confirms
+        } else {
+            // Do nothing if user cancels
+            console.log('Logout canceled.');
+        }
     });
 
     downloadButton?.addEventListener('click', function() {
