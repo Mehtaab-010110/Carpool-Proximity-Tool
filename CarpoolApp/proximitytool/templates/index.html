@@ -23,7 +23,11 @@
             <hr>
         </section>
         <section class="action-buttons">
-            <button id="uploadButton">UPLOAD EMPLOYEE DATA</button>
+            <form id="upload-form" method="post" action="{% url 'generate' %}">
+                {% csrf_token %}
+                <input type="file" align="center">
+                <button type="submit" id="uploadButton">UPLOAD EMPLOYEE DATA</button>
+            </form>
             <div class="template-download">
                 <p>DON’T HAVE A CSV ?</p>
                 <p>Download our template and add your employee data into it.</p>
