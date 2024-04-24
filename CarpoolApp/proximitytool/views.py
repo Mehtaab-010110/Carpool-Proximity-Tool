@@ -26,5 +26,6 @@ def index(request):
 def report(request):
     """ View function for data report page """
 
-    raise Http404("Report doesn't exist")
+    context = {}
+    return render(request, "data_page.html", context=context)
 
