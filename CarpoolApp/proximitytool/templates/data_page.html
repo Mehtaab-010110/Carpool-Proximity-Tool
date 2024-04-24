@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Data Page</title>
-    <link rel="stylesheet" href="data_page.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/data_page.css' %}">
 </head>
 <body>
     <header>
         <div class="logo">EPL</div>
-        <button id="logoutButton">LOGOUT</button>
+        <form id="logout-form" method="post" action="{% url 'logout' %}?next=/">
+            {% csrf_token %}
+            <button type="submit" id="logoutButton">LOGOUT</button>
+        </form>
     </header>
     <main>
         <section class="content-container">
             <h1>Data Report</h1>
 
             <!-- Image of the map -->
-            <img src="Map.png" alt="Map of Employee Locations" class="map-image">
+            <img src="{% static 'images/Map.png' %}" alt="Map of Employee Locations" class="map-image">
             <table id="data-table">
                 <!-- Table headers -->
                 <tr>
@@ -33,6 +37,6 @@
         <!-- Footer content if needed -->
     </footer>
 
-    <script src="data_page.js"></script>
+    <script src="{% static 'js/data_page.js' %}"></script>
 </body>
 </html>
