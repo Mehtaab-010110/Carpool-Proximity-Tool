@@ -37,7 +37,7 @@ class Address(models.Model):
     # Methods
     def __str__(self):
         """ String for representing this Address object """
-        return f"{self.street}\n{self.city}\n{self.province},{self.postal_code}\n{self.city}"
+        return f"{self.street}\n{self.city}\n{self.province},{self.postal_code}\n{self.country}"
 
 
 class Company(models.Model):
