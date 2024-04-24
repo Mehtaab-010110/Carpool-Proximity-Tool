@@ -3,12 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Login Page - Employee Proximity Locator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="login-container">
+    <!-- Application Title and Tagline -->
+    <div class="app-title">
+        <h1>Employee Proximity Locator
+        <p class="tagline">Explore employee proximity and enhance workplace collaboration.</p>
+    </div>
+
     <form id="loginForm">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
@@ -18,19 +24,7 @@
     </form>
 </div>
 
-<script>
-document.getElementById('loginForm').onsubmit = function(e) {
-    e.preventDefault();
-    var username = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-    if(username === 'user' && password === 'password') {
-        alert('Login successful');
-        window.location.href = 'home_page.html'; // Redirect to main page
-    } else {
-        alert('Login failed');
-    }
-};
-</script>
+<script src="login.js"></script>
 
 </body>
 </html>

@@ -62,12 +62,13 @@ main {
     width: 90%;
     max-width: 800px;
     background: #fff;
-    margin-top: -60px; /* Pulls the container up over the header */
+    margin-top: 1 rem; /* Adjust this value as needed to create more space */
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     transition: box-shadow 0.3s ease-in-out;
 }
+
 
 .content-container h1 {
     font-size: 2rem;
@@ -121,3 +122,12 @@ footer {
         font-size: 0.8rem;
     }
 }
+
+/* Additional styles for the map image */
+.map-image {
+    display: block;        /* Makes the image a block element to allow margin auto to work */
+    max-width: 75%;       /* Ensures the image never exceeds the width of its container */
+    height: auto;          /* Keeps the aspect ratio of the image */
+    margin: 20px auto;     /* Centers the image horizontally and adds vertical spacing */
+}
+
