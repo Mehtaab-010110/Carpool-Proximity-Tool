@@ -1,6 +1,6 @@
 # CarpoolProximityTool
 
-< Insert tool Desc >
+Django App for assisting you in finding optimal carpooling routes for your employees.
 
 # Deployment
 *REQUIREMENTS*: Atleast python3.9
