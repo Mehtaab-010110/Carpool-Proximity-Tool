@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     populateTable(sampleData);
 
-    logoutButton.addEventListener('click', function(event) {
+    /**logoutButton.addEventListener('click', function(event) {
         event.preventDefault();
         if (confirm('Are you sure you want to logout?')) {
             window.location.href = 'index.html';
         }
-    });
+    });*/
 });
