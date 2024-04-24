@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, Http404
 from django.contrib.auth.decorators import login_required
 from .models import CarpoolGroup, Address, Person, Company
 
@@ -20,3 +20,11 @@ def index(request):
 
     # Render the HTML template index.html with the data in context variable
     return render(request, "index.html", context=context)
+
+
+@login_required
+def report(request):
+    """ View function for data report page """
+
+    raise Http404("Report doesn't exist")
+
