@@ -23,7 +23,7 @@
             <hr>
         </section>
         <section class="action-buttons">
-            <form id="upload-form" method="post" action="{% url 'generate' %}">
+            <form id="upload-form" method="post" action="{% url 'gen-report' %}">
                 {% csrf_token %}
                 <input type="file" align="center">
                 <button type="submit" id="uploadButton">UPLOAD EMPLOYEE DATA</button>
