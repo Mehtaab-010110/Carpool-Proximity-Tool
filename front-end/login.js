@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     // Simple authentication check
     if(username === 'user' && password === '1234') {
         alert('Login successful');
-        window.location.href = 'front-end/home_page.html'; // Redirect to the home page upon successful login
+        window.location.href = 'home_page.html'; // Redirect to the home page upon successful login
     } else {
         alert('Login failed');  // Notify user of failed login attempt
     }
